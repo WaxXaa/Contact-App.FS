@@ -58,6 +58,6 @@ app.delete('/notes/:id', (req, res) => {
     console.log("-------------------------------------------------------------------------------------\n\tan item has been deleted")
     console.table(contacts)
 })
-
-app.listen(3002)
+const PORT = process.env.PORT || 3001
+app.listen(PORT)
 console.log('runing')
