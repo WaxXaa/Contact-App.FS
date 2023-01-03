@@ -1,0 +1,7 @@
+POST http://localhost:3002/notes
+Content-Type: application/json
+
+{
+    "name": "ale",
+    "number": "65345-34-53-42"
+}
