@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node ./src/index.js",
     "dev": "nodemon ./src/index.js",
+    "refreshFrontend": "rm -r build && cd ../../react/contacts-list/ && npm run build && cp -r build ../../node/node1/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "WaxXaa",
@@ -15,6 +16,7 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongoose": "^6.8.2"
   }
 }

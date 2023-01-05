@@ -1,6 +1,21 @@
 const { json } = require('express')
 const express = require('express')
 const cors = require('cors')
+const mongoose = require('mongoose')
+const url = `mongodb+srv://waxXa:Yousofl7100@cluster0.breey8o.mongodb.net/?retryWrites=true&w=majority`
+mongoose.connect(url)
+const contactSchema = new mongoose.Schema({
+    name: String,
+    number: String,
+    date: new Date()
+})
+const cModel = mongoose.model('cModel', contactSchema)
+
+
+
+
+
+
 const app = express()
 let contacts = [
     {
@@ -10,7 +25,7 @@ let contacts = [
     }
 ]
 app.use(cors())
-
+app.use(express.static("build"))
 app.use(express.json())
 
 const idGenerator = () => {
@@ -20,7 +35,7 @@ const idGenerator = () => {
     return maxId
 }
 app.get('/', (req, res) => {
-    res.send('hello world alejandro')
+    res.send("../build/index.html")
 })
 app.get('/info', (req, res) => {
     res.send(`you have ${contacts.length} contacts`)
