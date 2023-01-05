@@ -3,13 +3,13 @@ const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const url = `mongodb+srv://waxXa:Yousofl7100@cluster0.breey8o.mongodb.net/?retryWrites=true&w=majority`
-mongoose.connect(url)
-const contactSchema = new mongoose.Schema({
-    name: String,
-    number: String,
-    date: new Date()
-})
-const cModel = mongoose.model('cModel', contactSchema)
+// mongoose.connect(url)
+// const contactSchema = new mongoose.Schema({
+//     name: String,
+//     number: String,
+//     date: new Date()
+// })
+// const cModel = mongoose.model('cModel', contactSchema)
 
 
 
