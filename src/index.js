@@ -1,8 +1,9 @@
+require('dotenv').config()
 const { json } = require('express')
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
-const url = `mongodb+srv://waxXa:Yousofl7100@cluster0.breey8o.mongodb.net/?retryWrites=true&w=majority`
+const url = process.env.MONGO_URL
 // mongoose.connect(url)
 // const contactSchema = new mongoose.Schema({
 //     name: String,
@@ -73,6 +74,6 @@ app.delete('/notes/:id', (req, res) => {
     console.log("-------------------------------------------------------------------------------------\n\tan item has been deleted")
     console.table(contacts)
 })
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT
 app.listen(PORT)
-console.log('runing')
+console.log(`runing on port ${PORT}`)
