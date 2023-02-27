@@ -1,7 +1,0 @@
-POST http://localhost:3001/notes
-Content-Type: application/json
-
-{
-    "name": "tom",
-    "number": "85-835-68-6"
-}

@@ -1,5 +1,7 @@
 # dependecies
+package-lock.json
 /node_modules
 # env variables
 .env
+# request test
 /request

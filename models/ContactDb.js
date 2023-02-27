@@ -1,19 +1,18 @@
 const mongoose = require('mongoose')
-const url = process.env.MONGO_URL
-mongoose.connect(url, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-  .then(() => {
-    console.log('database connected')
-  })
-  .catch(error => {
-    console.log(error)
-  })
 const contactSchema = new mongoose.Schema({
-  name: String,
-  number: String,
-  date: String
+  name: {
+    type: String,
+    required: true
+  },
+  number: {
+    type: String,
+    required: true
+  },
+  date: String,
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }
 })
 
 contactSchema.set('toJSON', {
